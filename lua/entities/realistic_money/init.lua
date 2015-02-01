@@ -18,6 +18,8 @@ function ENT:Initialize()
         self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
     elseif(self:Getamount() > 1000000 and GetConVar("rm_dev")) then
         self:SetModel("models/props/cs_assault/moneypallet03e.mdl")
+    else
+    	self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
     end
     self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
