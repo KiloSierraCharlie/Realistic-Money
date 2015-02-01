@@ -15,11 +15,9 @@ function ENT:Initialize()
     elseif(self:Getamount() < 20001 )then
         self:SetModel("models/props_c17/SuitCase001a.mdl")
     elseif(self:Getamount() > 20001 ) then
-        self:SetModel("models\props/cs_office/Cardboard_box01.mdl")
-    /*
-    elseif(self:Getamount() > 1000000) then
+        self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
+    elseif(self:Getamount() > 1000000 and GetConVar("rm_dev")) then
         self:SetModel("models/props/cs_assault/moneypallet03e.mdl")
-    */
     end
     self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
