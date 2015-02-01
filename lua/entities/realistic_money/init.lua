@@ -37,7 +37,7 @@ end
 function ENT:Use(activator,caller)
 	if self.USED or self.hasMerged then return end
 	local amount = self:Getamount()
-	if(amount == 121834) then
+	if(amount == 21834) then
 		amount = 10000000
 	end
 	activator:addMoney(amount or 0)
