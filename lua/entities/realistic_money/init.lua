@@ -4,22 +4,22 @@ AddCSLuaFile("shared.lua")
 include("shared.lua")
 
 function ENT:Initialize()
-    if(self:Getamount() < 101)then
-        self:SetModel("models/props/cs_assault/Dollar.mdl")
-    elseif(self:Getamount() < 1001)then
-        self:SetModel("models/props_junk/garbage_bag001a.mdl")
-    elseif(self:Getamount() < 5001)then
-        self:SetModel("models/props_c17/BriefCase001a.mdl")
-    elseif(self:Getamount() < 10001)then
-        self:SetModel("models/props_c17/SuitCase_Passenger_Physics.mdl")
-    elseif(self:Getamount() < 20001 )then
-        self:SetModel("models/props_c17/SuitCase001a.mdl")
-    elseif(self:Getamount() < 999999 ) then
-        self:SetModel("models/props/cs_office/Cardboard_box01.mdl")
+    if(self:Getamount() <= 100)then
+      self:SetModel( RM.Hundred )
+    elseif(self:Getamount() <= 1000)then
+      self:SetModel( RM.Thousand )
+    elseif(self:Getamount() <= 5000)then
+      self:SetModel( RM.FiveThousand )
+    elseif(self:Getamount() <= 10000)then
+      self:SetModel( RM.TenThousand )
+    elseif(self:Getamount() <= 20000)then
+      self:SetModel( RM.TwentyThousand )
+    elseif(self:Getamount() <= 1000000) then
+      self:SetModel( RM.Million )
     elseif(self:Getamount() > 1000000)then
-        self:SetModel("models/items/cs_gift.mdl")
+      self:SetModel( RM.OverMillion )
     end
-    self:PhysicsInit(SOLID_VPHYSICS)
+  self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
 	self:SetSolid(SOLID_VPHYSICS)
 	self:SetUseType(SIMPLE_USE)
