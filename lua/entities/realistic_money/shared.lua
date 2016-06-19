@@ -1,7 +1,7 @@
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
 ENT.PrintName = "Realistic Money"
-ENT.Author = "MindfulHacker + FPtje"
+ENT.Author = "KiloSierraCharlie + FPtje"
 ENT.Spawnable = false
 
 function ENT:SetupDataTables()
